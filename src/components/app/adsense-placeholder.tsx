@@ -21,7 +21,6 @@ export function AdSensePlaceholder() {
           } catch (err) {
             console.error("AdSense error:", err);
           }
-          // Once the ad is pushed, we don't need to observe anymore
           if (observerRef.current && adRef.current) {
             observerRef.current.unobserve(adRef.current);
           }
@@ -49,11 +48,11 @@ export function AdSensePlaceholder() {
     <ins
       ref={adRef}
       className="adsbygoogle"
-      style={{ display: "block", width: "100%" }}
+      style={{ display: "block", textAlign: "center" }}
+      data-ad-layout="in-article"
+      data-ad-format="fluid"
       data-ad-client="ca-pub-1493226158255742"
-      data-ad-slot="1675362834"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
+      data-ad-slot="8316792805"
     ></ins>
   );
 }
