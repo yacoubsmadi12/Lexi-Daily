@@ -16,11 +16,17 @@ export function AdSensePlaceholder() {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-          } catch (err) {
-            console.error("AdSense error:", err);
-          }
+          // Add a small delay to ensure the container is sized
+          setTimeout(() => {
+            try {
+              if (adRef.current && adRef.current.offsetWidth > 0) {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+              }
+            } catch (err) {
+              console.error("AdSense error:", err);
+            }
+          }, 100);
+
           if (observerRef.current && adRef.current) {
             observerRef.current.unobserve(adRef.current);
           }
