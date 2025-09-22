@@ -74,13 +74,13 @@ export function WordDisplay({ wordData, dailyTip }: WordDisplayProps) {
       {dailyTip && (
         <Card className="bg-accent/20 border-accent/50 shadow-lg">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-accent-foreground/80">
+            <CardTitle className="flex items-center gap-2 text-accent-foreground/80 dark:text-foreground">
               <Lightbulb className="h-6 w-6 text-accent" />
               Daily Tip
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-accent-foreground/90">{dailyTip}</p>
+            <p className="text-accent-foreground/90 dark:text-foreground/80">{dailyTip}</p>
           </CardContent>
         </Card>
       )}
