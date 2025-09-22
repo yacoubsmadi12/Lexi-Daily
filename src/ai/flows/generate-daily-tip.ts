@@ -1,5 +1,3 @@
-// This file is machine-generated - edit at your own risk!
-
 'use server';
 
 /**
@@ -11,19 +9,8 @@
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { GenerateDailyTipInputSchema, GenerateDailyTipOutputSchema, type GenerateDailyTipInput, type GenerateDailyTipOutput } from '@/lib/types';
 
-const GenerateDailyTipInputSchema = z.object({
-  word: z.string().describe('The word of the day.'),
-  definition: z.string().describe('The definition of the word.'),
-  exampleSentences: z.array(z.string()).describe('Example sentences using the word.'),
-});
-export type GenerateDailyTipInput = z.infer<typeof GenerateDailyTipInputSchema>;
-
-const GenerateDailyTipOutputSchema = z.object({
-  tip: z.string().describe('A tip on how to use the word in practical contexts.'),
-});
-export type GenerateDailyTipOutput = z.infer<typeof GenerateDailyTipOutputSchema>;
 
 export async function generateDailyTip(input: GenerateDailyTipInput): Promise<GenerateDailyTipOutput> {
   return generateDailyTipFlow(input);

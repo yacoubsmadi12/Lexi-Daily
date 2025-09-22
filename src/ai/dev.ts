@@ -3,3 +3,4 @@ config();
 
 import '@/ai/flows/generate-daily-word.ts';
 import '@/ai/flows/generate-daily-tip.ts';
+import '@/ai/flows/generate-quiz-questions';
