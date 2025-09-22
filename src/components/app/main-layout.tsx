@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, NotebookText, Archive, User, Info, BookOpen } from 'lucide-react';
+import { Home, NotebookText, Archive, User, Info, BookOpen, Heart } from 'lucide-react';
 import {
   SidebarProvider,
   Sidebar,
@@ -26,6 +26,8 @@ const navItems = [
   { href: '/profile', label: 'Profile', icon: User },
   { href: '/about', label: 'About', icon: Info },
 ];
+
+const donateLink = "https://www.paypal.com/ncp/payment/FTWD5H25EELH6";
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -55,6 +57,17 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 </SidebarMenuButton>
               </SidebarMenuItem>
             ))}
+             <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  tooltip="Donate"
+                >
+                  <Link href={donateLink} target="_blank" rel="noopener noreferrer">
+                    <Heart className="text-red-500" />
+                    <span>Donate</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
           </SidebarMenu>
         </SidebarContent>
         <SidebarFooter>
