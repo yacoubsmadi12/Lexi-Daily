@@ -14,8 +14,12 @@ export default function QuizPage() {
         </div>
         <aside className="space-y-8">
           <h3 className="text-lg font-semibold text-center lg:text-left">Advertisement</h3>
-          <AdSensePlaceholder className="w-full" height="250px" />
-          <AdSensePlaceholder className="w-full hidden lg:flex" height="250px" />
+          <div className="w-full h-auto min-h-[250px] rounded-lg border-2 border-dashed bg-muted/50 p-4 flex items-center justify-center">
+            <AdSensePlaceholder />
+          </div>
+          <div className="w-full h-auto min-h-[250px] rounded-lg border-2 border-dashed bg-muted/50 p-4 hidden lg:flex items-center justify-center">
+            <AdSensePlaceholder />
+          </div>
         </aside>
       </div>
     </div>

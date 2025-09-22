@@ -31,9 +31,13 @@ export function ArchiveClient() {
         />
         </Card>
         <div className="space-y-4">
-            <AdSensePlaceholder className="w-full" height="250px" />
+            <div className="w-full h-auto min-h-[250px] rounded-lg border-2 border-dashed bg-muted/50 p-4 flex items-center justify-center">
+                <AdSensePlaceholder />
+            </div>
             <p className="text-sm text-center text-muted-foreground">Small ad unit between entries</p>
-            <AdSensePlaceholder className="w-full" height="250px" />
+            <div className="w-full h-auto min-h-[250px] rounded-lg border-2 border-dashed bg-muted/50 p-4 flex items-center justify-center">
+                <AdSensePlaceholder />
+            </div>
         </div>
     </div>
   );

@@ -8,7 +8,9 @@ export default function ArchivePage() {
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Word Archive</h1>
         <p className="mt-2 text-lg text-muted-foreground">Explore words from previous days.</p>
       </div>
-      <AdSensePlaceholder className="w-full" height="90px" />
+      <div className="w-full h-auto min-h-[90px] rounded-lg border-2 border-dashed bg-muted/50 p-4 flex items-center justify-center">
+        <AdSensePlaceholder />
+      </div>
       <ArchiveClient />
     </div>
   );

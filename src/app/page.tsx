@@ -21,7 +21,9 @@ export default async function Home() {
   
   return (
     <div className="container mx-auto max-w-4xl space-y-8">
-      <AdSensePlaceholder className="w-full" height="90px" />
+      <div className="w-full h-auto min-h-[90px] rounded-lg border-2 border-dashed bg-muted/50 p-4 flex items-center justify-center">
+        <AdSensePlaceholder />
+      </div>
       <div className="text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Word of the Day</h1>
         <p className="mt-2 text-lg text-muted-foreground">{new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>

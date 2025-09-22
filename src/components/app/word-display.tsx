@@ -52,7 +52,9 @@ export function WordDisplay({ wordData, dailyTip }: WordDisplayProps) {
             <p className="mt-2 text-muted-foreground">{wordData.definition}</p>
           </div>
 
-          <AdSensePlaceholder className="my-6" height="100px" />
+          <div className="w-full h-auto min-h-[100px] rounded-lg border-2 border-dashed bg-muted/50 p-4 flex items-center justify-center">
+            <AdSensePlaceholder />
+          </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
@@ -74,13 +76,13 @@ export function WordDisplay({ wordData, dailyTip }: WordDisplayProps) {
       {dailyTip && (
         <Card className="bg-accent/20 border-accent/50 shadow-lg">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-accent-foreground/80 dark:text-foreground">
+            <CardTitle className="flex items-center gap-2 text-accent-foreground">
               <Lightbulb className="h-6 w-6 text-accent" />
               Daily Tip
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-accent-foreground/90 dark:text-foreground/80">{dailyTip}</p>
+            <p className="text-accent-foreground/90">{dailyTip}</p>
           </CardContent>
         </Card>
       )}

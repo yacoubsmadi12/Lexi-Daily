@@ -1,41 +1,30 @@
-import { cn } from "@/lib/utils";
+"use client";
 
-type AdSensePlaceholderProps = {
-  className?: string;
-  width?: string | number;
-  height?: string | number;
-};
+import { useEffect } from "react";
 
-export function AdSensePlaceholder({
-  className,
-  width = "100%",
-  height = "90px",
-}: AdSensePlaceholderProps) {
+declare global {
+  interface Window {
+    adsbygoogle: any;
+  }
+}
+
+export function AdSensePlaceholder() {
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center rounded-lg border-2 border-dashed bg-muted/50 text-muted-foreground",
-        className
-      )}
-      style={{ width, height }}
-    >
-      {/* 
-        Google AdSense Placeholder
-        Replace this div with your AdSense code.
-        Make sure to fill in your ca-pub and ad-slot IDs.
-
-        Example:
-        <ins className="adsbygoogle"
-             style={{ display: 'block' }}
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="YYYYYYYYYY"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      */}
-      <span className="text-sm">Ad Placeholder</span>
-    </div>
+    <ins
+      className="adsbygoogle"
+      style={{ display: "block" }}
+      data-ad-client="ca-pub-1493226158255742"
+      data-ad-slot="1675362834"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
   );
 }
